@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="/CSS/index.css">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
  
   <style>
 
@@ -87,71 +88,95 @@ input[type=submit]:hover {
 ul{
  list-style: none;
 }
+i:hover{
+  color:rgb(0, 255, 0)
+}
+.input-group span{
+  position: absolute;
+  bottom: 30px;
+  right: 14px;
+  font-size: 15px;
+  color:red;
+
+}
 
     </style>
-<body class="bg-dark">
+<body class="bg-black">
 
-<div class="container-fluid p-4 bg-dark ">
+<div class="container-fluid p-4 bg-black ">
   <div>
     <a href="index.html" style="padding: 0px 60px 70px 0px;font-family:Georgia, 'Times New Roman', Times, serif;position:absolute; top: 50px; left:30px;color:rgb(255, 255, 255) ;text-decoration:underline;"><ul> <li class="w3-jumbo"><i class="fa fa-home"></i></li></ul></a>
   </div><br>
     <div>
-      <h1  style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-size: 70px;padding-left: 450px ; margin-left: 500px text-white text-center;color: white;">Contact Me </h1>
+      <h1  style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-size: 70px;padding-left: 530px;color: white;">Contact Me </h1>
      </div>
 </div>
 
 <br>
 </div>
-<div class="container bg-white" >
+<div class="container bg-white" style="padding-left:10px ;" >
  
   <div class="row">
   
     <div class="column" >
-      <form action="/action_page.php">
-       
+      <form nameaction="/action_page.php">
+
+       <div class="input-group">
         <label for="fname" style="color: rgb(0, 0, 0);font-family:Georgia, 'Times New Roman', Times, serif;">First Name</label>
-        <input type="text" id="fname" name="firstname" placeholder="Your name">
-       
-       
+        <input type="text" id="fname" name="firstname" placeholder="Your name" onkeyup="validateName()">
+        <span id="fname-error"></span>
+       </div>
+
+         <div class="input-group">
         <label for="lname "style="color: black;font-family:Georgia, 'Times New Roman', Times, serif;">Last Name</label>
-        <input type="text" id="lname" name="lastname" placeholder="Your last name">
-       
-         
+        <input type="text" id="lname" name="lastname" placeholder="Your last name" onkeyup="validateName()">
+        <span id="lname-error"></span>
+         </div>
+
+        <div class="input-group">
          <label for="number" style="color: rgb(0, 0, 0);font-family:Georgia, 'Times New Roman', Times, serif;">Mobile number</label>
-          <input type="text" id="no" name="number" placeholder="Your number">
-       
-       
-          <label for="email"style="color: black;font-family:Georgia, 'Times New Roman', Times, serif;">Email</label>
-        <input type="text" id="lname" name="lastname" placeholder="Your email id">
-       
-       
-        <br>
-       <br>
-        <input type="submit" value="Submit">
-      </form>
-      <br>
-      <div style="background-color: rgb(255, 0, 0); width: 70%; padding: 5px;">
-        <br>
-        <label for="email" style="color: white;font: size 75px;font-family:Georgia, 'Times New Roman', Times, serif;">Contact me via Email<i class="fa fa-fw fa-envelope"></i></label>
-        <br><br>
-        <p style="color: white ;font-family:Georgia, 'Times New Roman', Times, serif;">siddharth.kharabe.2025@atlasskilltech.university</p>
-          
-    </div> 
-    <br><br>
-    <a href="mailto:siddharth.kharabe.2025@atlasskilltech.university" style="color: black ;background-color: rgb(252, 252, 2);padding: 10px;"><i class="fa fa-fw fa-envelope"></i>Send email</a></p>
+        <input type="text" id="no" name="number" placeholder="Your number" onkeyup="validateNumber()">
+        <span id="number-error"></span>
         </div>
+
+        <div class="input-group">
+          <label for="email"style="color: black;font-family:Georgia, 'Times New Roman', Times, serif;">Email</label>
+        <input type="text" id="email" name="lastname" placeholder="Your email id" onkeyup="validateEmail()">
+        <span id="email-error"></span>
+        </div>
+       
+        <br>
+       <div class="input-group" >
+        <input type="submit" value="Submit">
+        <span id="sumbit-error"></span>
+       </div>
+      </form>
+      <br>       
+      <div style="background-color: rgb(0, 0, 0); width: 80%; padding: 5px;">
+        
+        <label for="email" style="color: white;font-size: 40px;font-family:Georgia, 'Times New Roman', Times, serif;text-decoration: underline; margin-left: 30px;">Contact me via Email<i class="fa fa-fw fa-envelope"></i></label>
+        <br>
+        <p style="color: white ;font-family:Georgia, 'Times New Roman', Times, serif;margin-left: 80px;">siddharth.kharabe.2025@atlasskilltech.university</p>
+       <br>
+        <a href="mailto:siddharth.kharabe.2025@atlasskilltech.university" style="color: black ;background-color: rgb(255, 255, 255);padding: 10px;margin-left: 180px;border-radius: 10px;"><i class="fa fa-fw fa-envelope"></i>Send email</a></p>
+        <br>      
+      </div>
+    </div> 
+    
+        
     <div class="column">
-      <img src="IMAGES/IMG_1416.PNG" style="width:100%">
+      <img src="IMAGES/IMG_1416.PNG" style="width:500px;margin-left: 120px;">
     </div>
   </div>
  
 </div>
 
 <br><br><br>
+<script src="contact.js"></script>
 </body>
-<div class="container-fluid p-5 bg-dark ">
+<div class="container-fluid p-5 bg-black ">
   <button type="button" class="btn btn-link">
-  <a href="index.html" style="font-family:Georgia, 'Times New Roman', Times, serif;background-color:white;padding: 10px;margin-left:510px;text-decoration: underline;border-radius: 10px;">Go Back to Home Page</a> 
+  <a href="index.html" style="font-family:Georgia, 'Times New Roman', Times, serif;background-color:white;padding: 10px;margin-left:600px;text-decoration: underline;border-radius: 10px;">Go Back to Home Page</a> 
 </button>
 </div>
 </html>
